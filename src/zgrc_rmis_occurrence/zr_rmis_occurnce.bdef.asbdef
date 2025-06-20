@@ -1,0 +1,57 @@
+managed implementation in class ZBP_R_RMIS_OCCURNCE unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_RMIS_OCCURNCE alias ZrRmisOccurnce
+persistent table ZTRMIS_OCCURNCE
+draft table ZRMIS_OCCRNCE_D
+etag master Lastchangedat
+lock master total etag Lastchangedat
+late numbering
+authorization master( global )
+
+{
+  field ( mandatory )
+   Name,
+   DateOfLoss;
+
+  field ( readonly )
+   OccurenceNo,
+   Owner,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+   determination setowner on modify { create; }
+
+//  field ( readonly : update )
+//   OccurenceNo;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTRMIS_OCCURNCE
+  {
+    OccurenceNo = occurence_no;
+    Name = name;
+    Description = description;
+    CatastropheCode = catastrophe_code;
+    OccurrenceType = occurrence_type;
+    DateOfLoss = date_of_loss;
+    Country = country;
+    Owner = owner;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+
+  }
+}

@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ListId'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ListId'
+annotate view ZC_RMIS_PICKLST_P with
+{
+  @EndUserText.label: 'ListId'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  },
+  { 
+    purpose: #STANDARD,
+    type: #LINEITEM_REFERENCE,
+    label: 'PickList Values',
+    position: 20,
+    targetElement: '_Child'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'ListId'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'ListId'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  ListId;
+  
+  @EndUserText.label: 'ListName'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'ListName'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'ListName'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  ListName;
+  
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Lastchangedat;
+}

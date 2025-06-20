@@ -1,0 +1,30 @@
+projection implementation in class ZBP_C_TGRC_ASSET003 unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TGRC_ASSET003 alias Root
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _Child { create; with draft; }
+}
+
+define behavior for ZC_TGRC_ASSET_VAL003 alias Child
+use etag
+
+{
+
+  use update;
+  use delete;
+
+ use association _Root { with draft; }
+}

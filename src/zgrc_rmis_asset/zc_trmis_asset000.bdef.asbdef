@@ -1,0 +1,30 @@
+projection implementation in class ZBP_C_TRMIS_ASSET000 unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TRMIS_ASSET000 alias Asset
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use association _AssetVal { create; with draft; }
+
+  use action copyasset;
+}
+define behavior for ZC_TRMIS_ASSET_VAL000 alias AssetVal
+use etag
+
+{
+
+  use update;
+  use delete;
+
+ use association _Asset { with draft; }
+}

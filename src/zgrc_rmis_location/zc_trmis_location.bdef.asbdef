@@ -1,0 +1,18 @@
+projection implementation in class ZBP_C_TRMIS_LOCATION unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TRMIS_LOCATION alias ZcTrmisLocation
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action copy;
+}

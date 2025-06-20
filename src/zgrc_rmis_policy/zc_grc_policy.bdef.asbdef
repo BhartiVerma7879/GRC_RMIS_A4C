@@ -1,0 +1,45 @@
+projection implementation in class ZBP_C_GRC_POLICY unique;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_GRC_POLICY alias Policy
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+  use action copy;
+
+  use association _Policyendo { create; with draft; }
+  use association _Policysec { create; with draft; }
+  use association _Policytran { create; with draft; }
+}
+
+define behavior for ZC_GRC_POLICY_ENDO alias Policyendo
+{
+  use update;
+  use delete;
+
+  use association _Policy { with draft; }
+}
+
+define behavior for ZC_GRC_POLICY_SEC alias Policysec
+{
+  use update;
+  use delete;
+
+  use association _Policy { with draft; }
+}
+
+define behavior for ZC_GRC_POLICY_TRAN alias Policytran
+{
+  use update;
+  use delete;
+
+  use association _Policy { with draft; }
+}

@@ -1,0 +1,76 @@
+managed;
+strict ( 2 );
+//with draft;
+define behavior for ZR_RMIS_PICKLST_P alias Parent
+implementation in class ZBP_R_RMIS_PICKLST_P unique
+persistent table ZTRMIS_PICKLST_P
+//draft table ZTRMS_PCKLS000_D
+etag master Lastchangedat
+//lock master total etag Lastchangedat
+lock master
+early numbering
+authorization master( global )
+
+{
+//  field ( mandatory : create )
+//   ListId;
+
+  field ( readonly )
+   ListId,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+//  field ( readonly : update )
+//   ListId;
+
+
+  create;
+  update;
+  delete;
+  association _Child { create; }
+
+//  draft action Activate optimized;
+//  draft action Discard;
+//  draft action Edit;
+//  draft action Resume;
+//  draft determine action Prepare;
+
+  mapping for ZTRMIS_PICKLST_P
+  {
+    ListId = list_id;
+    ListName = list_name;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}
+define behavior for ZR_RMIS_PICKLST_C alias Child
+implementation in class ZBP_R_RMIS_PICKLST_C unique
+persistent table ztrmis_picklst_c
+lock dependent by _Parent
+authorization dependent by _Parent
+etag master LastChangedAt
+early numbering
+{
+
+ update;
+ delete;
+ field(readonly) ListId,ValueId;
+ association _Parent;
+
+      mapping for ztrmis_picklst_c
+  {
+    ListId = list_id;
+    ValueId = value_id;
+    ListValue = list_value;
+    ListDesc = list_desc;
+    Active = active;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}

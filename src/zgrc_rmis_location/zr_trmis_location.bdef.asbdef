@@ -1,0 +1,158 @@
+managed implementation in class ZBP_R_TRMIS_LOCATION unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TRMIS_LOCATION alias ZrTrmisLocation
+persistent table ZTRMIS_LOCATION
+draft table ZTRMIS_LCATION_D
+etag master Locallastchangedat
+lock master total etag Locallastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Level1Id;
+
+  field ( readonly )
+   LocationUuid,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchangedat;
+
+  field ( numbering : managed )
+   LocationUuid;
+
+  field ( readonly : update )
+   Level1Id;
+
+
+  create;
+  update;
+  delete;
+
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+
+  factory action copy[1];
+
+ validation validateDate on save { create; update; }
+ validation validateNodeLevel on save { create; update; }
+
+
+  determination setLocationStatus on modify { create; field DateActive;}
+
+  draft determine action Prepare
+  {
+    validation validateDate;
+    validation validateNodeLevel;
+  }
+
+  mapping for ZTRMIS_LOCATION
+  {
+    LocationUuid = location_uuid;
+    Level1Id = level_1_id;
+    AddressLine1 = address_line1;
+    AddressLine2 = address_line2;
+    AllowAgreedValueInput = allow_agreed_value_input;
+    Bim = bim;
+    BimDate = bim_date;
+    Brand = brand;
+    BusinessArea = business_area;
+    Level2Id = level_2_id;
+    Level4Id = level_4_id;
+    BusinessUnitOnlAndOthers = business_unit_onl_and_others;
+    CfoCellPhoneNumber = cfo_cell_phone_number;
+    CooCellPhoneNumber = coo_cell_phone_number;
+    HseCellPhoneNumber = hse_cell_phone_number;
+    Lch2CellPhoneNumber = lch2_cell_phone_number;
+    LchCellPhoneNumber = lch_cell_phone_number;
+    MaintanceManCellPhoneNum = maintance_man_cell_phone_num;
+    MdCellPhoneNum = md_cell_phone_num;
+    ChiefFinancialOfficer = chief_financial_officer;
+    ChiefFinancialOfficerName = chief_financial_officer_name;
+    ChiefOperatingOfficer = chief_operating_officer;
+    ChiefOperatingOfficerName = chief_operating_officer_name;
+    City = city;
+    Level5Id = level_5_id;
+    CountryOnl = country_onl;
+    Country = country;
+    Currency = currency;
+    DateActive = date_active;
+    DateInactive = date_inactive;
+    CfoEmail = cfo_email;
+    CooEmail = coo_email;
+    HseEmail = hse_email;
+    MaintanceManEmail = maintance_man_email;
+    ManagingDirectorEmail = managing_director_email;
+    LchEmail = lch_email;
+    Lch2Email = lch2_email;
+    LocationStatus = location_status;
+    CfoFaxNumber = cfo_fax_number;
+    CooFaxNumber = coo_fax_number;
+    HseFaxNumber = hse_fax_number;
+    Lch2FaxNumber = lch2_fax_number;
+    LchFaxNumber = lch_fax_number;
+    MaintanceManFaxNumber = maintance_man_fax_number;
+    ManagingDirectorFaxNumber = managing_director_fax_number;
+    Former = former;
+    GrmClaimUseOnly = grm_claim_use_only;
+    HermesCode = hermes_code;
+    HqfmCode = hqfm_code;
+    HseManger = hse_manger;
+    HseMangerName = hse_manger_name;
+    IncludeInRenewalCollection = include_in_renewal_collection;
+    Latitude = latitude;
+    LeadClaimsHandler = lead_claims_handler;
+    LeadClaimsHandler2 = lead_claims_handler_2;
+    LeadClaimsHandler2Name = lead_claims_handler_2_name;
+    LeadClaimsHandlerName = lead_claims_handler_name;
+    LegalClassification = legal_classification;
+    LegalEntityName = legal_entity_name;
+    LocalTerminalName = local_terminal_name;
+    NodeCode = node_code;
+    Longitude = longitude;
+    MaintenanceManager = maintenance_manager;
+    MaintenanceManagerName = maintenance_manager_name;
+    ManagingDirector = managing_director;
+    ManagingDirectorName = managing_director_name;
+    NodeDesc = node_desc;
+    NodeKey = node_key;
+    NodeLevel = node_level;
+    Notes = notes;
+    Office = office;
+    Organisation1 = organisation_1;
+    Ownership = ownership;
+    ParentCode = parent_code;
+    ParentDesc = parent_desc;
+    ParentLevel = parent_level;
+    ParentNode = parent_node;
+    CfoPhoneNumber = cfo_phone_number;
+    CooPhoneNumber = coo_phone_number;
+    HsePhoneNumber = hse_phone_number;
+    Lch2PhoneNumber = lch2_phone_number;
+    LchPhoneNumber = lch_phone_number;
+    MaintanceManPhoneNumber = maintance_man_phone_number;
+    ManagingDirectorPhoneNumber = managing_director_phone_number;
+    PortAuthority = port_authority;
+    PostalCode = postal_code;
+    PrimaryContact = primary_contact;
+    Region = region;
+    RenewalContact = renewal_contact;
+    States = states;
+    StateOnl = state_onl;
+    SubBrand = sub_brand;
+    Level3Id = level_3_id;
+    TerminalNameLocal = terminal_name_local;
+    VendorPortalTerminal = vendor_portal_terminal;
+    Warehouse = warehouse;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchangedat = locallastchangedat;
+  }
+}

@@ -1,0 +1,234 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'AssetUuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'AssetUuid'
+annotate view ZC_TGRC_ASSET003 with
+{
+  @EndUserText.label: 'AssetUuid'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ,
+  {
+    label: 'Items', 
+    id: 'Items', 
+    purpose: #STANDARD, 
+    position: 11 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Child'
+  } 
+  ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'AssetUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'AssetUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  AssetUuid;
+  
+  @EndUserText.label: 'AssetId'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'AssetId'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'AssetId'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  AssetId;
+  
+  @EndUserText.label: 'AssetExternal'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'AssetExternal'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'AssetExternal'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  AssetExternal;
+  
+  @EndUserText.label: 'AccountingCode'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'AccountingCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'AccountingCode'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  AccountingCode;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Afe;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  AgreedValueLookup;
+  
+  @EndUserText.label: 'AreaSqKm'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'AreaSqKm'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'AreaSqKm'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  AreaSqKm;
+  
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  AssetCategory;
+  
+  @EndUserText.label: 'AssetDescription'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'AssetDescription'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'AssetDescription'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  AssetDescription;
+  
+  @EndUserText.label: 'AssetMakeOrModel'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'AssetMakeOrModel'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'AssetMakeOrModel'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  AssetMakeOrModel;
+  
+  @EndUserText.label: 'AssetName'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'AssetName'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'AssetName'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  AssetName;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  AssetPolicyHistory;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  AssetStatus;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 160 
+  } ]
+  @UI.lineItem: [ {
+    position: 160 
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 170 
+  } ]
+  @UI.lineItem: [ {
+    position: 170 
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  Lastchangedat;
+}

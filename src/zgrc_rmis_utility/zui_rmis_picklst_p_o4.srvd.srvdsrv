@@ -1,0 +1,14 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_RMIS_PICKLST_P'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_RMIS_PICKLST_P'
+  }
+}
+define service ZUI_RMIS_PICKLST_P_O4 provider contracts odata_v4_ui {
+  expose ZC_RMIS_PICKLST_P;
+  expose ZC_RMIS_PICKLST_C;
+  expose ZR_RMIS_PICKLST_P;
+  expose ZR_RMIS_PICKLST_C;
+}

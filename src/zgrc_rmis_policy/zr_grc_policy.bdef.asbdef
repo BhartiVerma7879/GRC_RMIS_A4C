@@ -1,0 +1,359 @@
+managed implementation in class zbp_r_grc_policy unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_GRC_POLICY alias Policy //alias <alias_name>
+persistent table ztrmis_policy
+draft table ztrmis_policy_d
+etag master Locallastchangedat
+lock master total etag Lastchangedat
+authorization master ( global )
+{
+  field ( readonly )
+  PolicyUuid ,
+  PolicyName,
+  Createdby,
+  Createdat,
+  Lastchangedat,
+  Locallastchangedat;
+
+  field ( numbering : managed )
+  PolicyUuid;
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+
+  factory action copy[1];
+
+  validation validatePolicyAggregateLimit on save { create; update; }
+  validation validateCarrierPercentCoverage on save { create; update; }
+  validation validateDatePolicyEffective on save { create; update; }
+  validation validateDateExcesCarrierNotify on save { create; update; }
+  validation validateProRataShare on save { create; update; }
+
+  determination setMiasGrossPremium on modify { create; field GrossGrm,MiasPercentage;}
+  determination setMiasNetPremium on modify { create; field NetGrm, MiasPercentage;}
+  determination setPolicyYear on modify { create; field DatePolicyEffective; }
+
+  draft determine action Prepare
+  {
+    validation validatePolicyAggregateLimit;
+    validation validateCarrierPercentCoverage;
+    validation validateDatePolicyEffective;
+    validation validateDateExcesCarrierNotify;
+    validation validateProRataShare;
+  }
+
+  association _Policyendo { create; with draft;}
+  association _Policysec { create; with draft; }
+  association _Policytran { create; with draft;}
+
+  mapping for ztrmis_policy
+    {
+    PolicyUuid = policy_uuid;
+    PolicyName = policy_name;
+    Broker = broker;
+    BrokerAmount = broker_amount;
+    BrokerCommissionPercent = broker_commission_percent;
+    BrokerCompensationType = broker_compensation_type;
+    BrokerContactDetails = broker_contact_details;
+    BrokerFee = broker_fee;
+    Carrier = carrier;
+    CarrierCoverage = carrier_coverage;
+    CoverageArea = coverage_area;
+    CoverageAreaDesc = coverage_area_desc;
+    CoverageLine = coverage_line;
+    CoverageMajor = coverage_major;
+    CoverageMinor = coverage_minor;
+    Createdbyid = createdbyid;
+    CurrencyCode = currency_code;
+    DateCancelled = date_cancelled;
+    DateExcessCarrierNotified = date_excess_carrier_notified;
+    DatePolicyCanceled = date_policy_canceled;
+    ExcessPolicy = excess_policy;
+    Exclusions = exclusions;
+    DatePolicyExpiration = date_policy_expiration;
+    Form = form;
+    FrontingInsurer = fronting_insurer;
+    GrossGrm = gross_grm;
+    GrossPremiumPaid = gross_premium_paid;
+    GrossReinsurancePremiumPaid = gross_reinsurance_premium_paid;
+    GrossReinsurancePremiumRepo = gross_reinsurance_premium_repo;
+    GrossWrittenPremiumReceived = gross_written_premium_received;
+    GrossWrittenPremiumReported = gross_written_premium_reported;
+    HierarchyLevel = hierarchy_level;
+    DatePolicyEffective = date_policy_effective;
+    UserId = user_id;
+    Insured = insured;
+    Insurer = insurer;
+    InsurerContactDetails = insurer_contact_details;
+    Lastmodifiedbyid = lastmodifiedbyid;
+    LayerNumber = layer_number;
+    LocalPolicyAutonum = local_policy_autonum;
+    MiasGrossPremium = mias_gross_premium;
+    MiasNetPremium = mias_net_premium;
+    MiasProgram = mias_program;
+    MiasProgramDescription = mias_program_description;
+    MiasRIYN = mias_r_i_y_n;
+    RIPercent1 = r_i_percent_1;
+    NamedInsured = named_insured;
+    NamedInsuredAddress = named_insured_address;
+    NetGrm = net_grm;
+    Notes = notes;
+    NotifyExcessCarrier = notify_excess_carrier;
+    Ownerid = ownerid;
+    PercentReinsured = percent_reinsured;
+    MiasPercentage = mias_percentage;
+    PolicyAggregateLimit = policy_aggregate_limit;
+    PolicyBasis = policy_basis;
+    PolicyDescription = policy_description;
+    PolicyDocument = policy_document;
+    PolicyNumber = policy_number;
+    PolicyOccurrenceLimit = policy_occurrence_limit;
+    PolicyStatus = policy_status;
+    PolicyType = policy_type;
+    PolicyYear = policy_year;
+    PredecessorPolicy = predecessor_policy;
+    PrimaryPolicy = primary_policy;
+    ProRataShare = pro_rata_share;
+    ProRatePeriod = pro_rate_period;
+    Producer = producer;
+    ProgramId = program_id;
+    ProgramYear = program_year;
+    ProgramComments = program_comments;
+    Rating = rating;
+    Recordtypeid = recordtypeid;
+    RenewalPolicy = renewal_policy;
+    RetentionAmount = retention_amount;
+    RetentionType = retention_type;
+    SubsidiaryOrBusinessUnit = subsidiary_or_business_unit;
+    SuccessorPolicy = successor_policy;
+    RkProcessStatus = rk_process_status;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchangedat = locallastchangedat;
+ }
+}
+
+define behavior for ZR_GRC_POLICY_SEC alias Policysec
+persistent table ztrmis_plcy_sec
+draft table ztrmis_pcy_sec_d
+lock dependent by _Policy
+authorization dependent by _Policy
+etag master Lastchangedat
+{
+  field ( readonly )
+
+  PolicyUuid,
+  PolicyName,
+  PolicyNumber,
+  Createdby,
+  Createdat,
+  Lastchangedat,
+  Locallastchangedat;
+
+  field ( numbering : managed, readonly ) PolicysecUuid;
+
+  validation validateSectionAggregateLimit on save { create; update; }
+  validation validateSectionInceptionDate on save { create; update; }
+
+  factory action copy[1];
+
+  association _Policy { with draft; }
+
+  update;
+  delete;
+
+  mapping for ztrmis_plcy_sec
+  {
+    PolicysecUuid = policysec_uuid;
+    PolicyNumber = policy_number;
+    PolicyUuid = policy_uuid;
+    PolicyName = policy_name;
+    PolicySectionName = policy_section_name;
+    SectionName = section_name;
+    AddLDeductibleLimitsInfo = add_l_deductible_limits_info;
+    SectionAttachmentPoint = section_attachment_point;
+    Createdbyid = createdbyid;
+    CurrencyCode = currency_code;
+    Description = description;
+    ExcessLayerPolicySection = excess_layer_policy_section;
+    ExcessPolicySection = excess_policy_section;
+    HierarchyLevel = hierarchy_level;
+    Lastmodifiedbyid = lastmodifiedbyid;
+    Notes = notes;
+    PolicySectionNumber = policy_section_number;
+    PredecessorPolicySection = predecessor_policy_section;
+    RenewalPolicySection = renewal_policy_section;
+    RetentionAmount = retention_amount;
+    RetentionType = retention_type;
+    AggregateLimit1 = aggregate_limit_1;
+    SectionCoverage = section_coverage;
+    SectionCoverageMajor = section_coverage_major;
+    SectionCoverageMinor = section_coverage_minor;
+    DateSectionExpiration = date_section_expiration;
+    DateSectionEffective = date_section_effective;
+    OccurrenceLimit1 = occurrence_limit_1;
+    LayerType = layer_type;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchangedat = locallastchangedat;
+  }
+  }
+
+
+define behavior for ZR_GRC_POLICY_ENDO alias Policyendo
+persistent table ztrmis_plcy_endo
+draft table ztrmis_pcy_end_d
+lock dependent by _Policy
+authorization dependent by _Policy
+etag master Lastchangedat
+{
+  field ( readonly )
+  PolicyEndorsementNumber,
+  PolicyUuid,
+  PolicyName,
+  Createdby,
+  Createdat,
+  Lastchangedat,
+  Locallastchangedat;
+
+  field ( numbering : managed, readonly ) PolicyendoUuid;
+
+  association _Policy { with draft; }
+  update;
+  delete;
+
+  determination calTotalPremium on modify { field TransitPremium ,StoragePremium ,AdditionalLiabilityPremium ; create; }
+
+    mapping for ztrmis_plcy_endo
+  {
+    PolicyendoUuid = policyendo_uuid;
+    PolicyEndorsementNumber = policy_endorsement_number;
+    PolicyUuid = policy_uuid;
+    PolicyName = policy_name;
+    AdditionalLiabilityMaxExpo = additional_liability_max_expo;
+    AdditionalLiabilityPremium = additional_liability_premium;
+    AdditionalLiabilityRate = additional_liability_rate;
+    Premium = premium;
+    BeyondBespokeClause = beyond_bespoke_clause;
+    Commodity = commodity;
+    ContractEndDate = contract_end_date;
+    ContractName = contract_name;
+    ContractStartDate = contract_start_date;
+    Createdbyid = createdbyid;
+    CurrencyCode = currency_code;
+    CustomerName = customer_name;
+    Department = department;
+    DateEffective = date_effective;
+    EndorsementName = endorsement_name;
+    EndorsementStatus = endorsement_status;
+    EndorsementText = endorsement_text;
+    EndorsementType = endorsement_type;
+    LocationMaersk = location_maersk;
+    Contact = contact;
+    Lastmodifiedbyid = lastmodifiedbyid;
+    LinkToMasterAgreement = link_to_master_agreement;
+    MasterAgreement = master_agreement;
+    ModeOfTransport = mode_of_transport;
+    NonStandardClaimsCalc = non_standard_claims_calc;
+    Notes = notes;
+    OpportunityOwner = opportunity_owner;
+    PolicyYear = policy_year;
+    Premium1 = premium1;
+    PredecessorEndorsement = predecessor_endorsement;
+    ProRataPremium = pro_rata_premium;
+    ProRataPremiumFormula = pro_rata_premium_formula;
+    ReviewDate = review_date;
+    Reviewer = reviewer;
+    StorageMaximumExposure = storage_maximum_exposure;
+    StoragePremium = storage_premium;
+    StorageRate = storage_rate;
+    StorageRevenue = storage_revenue;
+    SuccessorEndorsement = successor_endorsement;
+    PremiumT = premium_1;
+    TotalPremium = total_premium;
+    TransitMaximumExposure = transit_maximum_exposure;
+    TransitPremium = transit_premium;
+    TransitRate = transit_rate;
+    TransitRevenue = transit_revenue;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchangedat = locallastchangedat;
+  }
+
+}
+
+define behavior for ZR_GRC_POLICY_TRAN alias Policytran
+persistent table ztrmis_plcy_tran
+draft table ztrmis_pcy_trn_d
+lock dependent by _Policy
+authorization dependent by _Policy
+etag master Lastchangedat
+{
+  field ( readonly )
+  PolicyTransName,
+  PolicyUuid,
+  PolicyName,
+  AccountingMonth,
+  AccountingQuarter,
+  Createdby,
+  Createdat,
+  Lastchangedat,
+  Locallastchangedat;
+
+  field ( numbering : managed, readonly ) PolicytranUuid;
+  determination setAccountingMonthQuarter on modify { field AccountingDate ; create; }
+
+  association _Policy { with draft; }
+
+  update;
+  delete;
+  mapping for ztrmis_plcy_tran
+  {
+    PolicytranUuid = policytran_uuid;
+    PolicyTransName = policy_trans_name;
+    PolicyUuid = policy_uuid;
+    PolicyName = policy_name;
+    AccountingDate = accounting_date;
+    AccountingMonth = accounting_month;
+    AccountingQuarter = accounting_quarter;
+    Amount = amount;
+    Comments = comments;
+    CommissionAmount = commission_amount;
+    Createdbyid = createdbyid;
+    EstimatedPremium = estimated_premium;
+    FeesBroker = fees_broker;
+    FeesExciseTax = fees_excise_tax;
+    FeesFronting = fees_fronting;
+    FeesOther = fees_other;
+    FeesSurplus = fees_surplus;
+    GrossPremium = gross_premium;
+    Lastmodifiedbyid = lastmodifiedbyid;
+    Location = location;
+    NetPremium = net_premium;
+    Payee = payee;
+    RkPidConstructor = rk_pid_constructor;
+    Status = status;
+    Taxes = taxes;
+    TotalPremium = total_premium;
+    TransactionDate = transaction_date;
+    Type = type;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchangedat = locallastchangedat;
+  }
+}

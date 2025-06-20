@@ -1,0 +1,1052 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Policy'
+@UI.headerInfo.typeNamePlural: 'Projection CDS View for ZR_GRC_POLICY'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'PolicyUuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'PolicyUuid'
+annotate view ZC_GRC_POLICY
+    with 
+{
+  @EndUserText.label: 'PolicyUuid'
+  @UI.facet: [ {
+    label: 'Policy', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  }, 
+  {
+    label: 'Policy Endorsement', 
+    id: 'Items1', 
+    purpose: #STANDARD, 
+    position: 11 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Policyendo'
+  },
+  {
+    label: 'Ploicy Section', 
+    id: 'Items2', 
+    purpose: #STANDARD, 
+    position: 12 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Policysec'
+  },
+  {
+    label: 'Policy Transaction', 
+    id: 'Items3', 
+    purpose: #STANDARD, 
+    position: 13 , 
+    type: #LINEITEM_REFERENCE, 
+    targetElement: '_Policytran'
+  }
+  ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'PolicyUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'PolicyUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  @UI.hidden: true 
+  
+  PolicyUuid;
+  
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  },
+  { type: #FOR_ACTION, label: 'Clone',
+    dataAction: 'copy' }  ] 
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  PolicyName;
+  
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Broker;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  BrokerAmount;
+  
+  @EndUserText.label: 'BrokerCommissionPercent'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'BrokerCommissionPercent'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'BrokerCommissionPercent'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  BrokerCommissionPercent;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  BrokerCompensationType;
+  
+  @EndUserText.label: 'BrokerContactDetails'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'BrokerContactDetails'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'BrokerContactDetails'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  BrokerContactDetails;
+  
+  @EndUserText.label: 'BrokerFee'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'BrokerFee'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'BrokerFee'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  BrokerFee;
+  
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Carrier;
+  
+  @EndUserText.label: 'CarrierCoverage'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'CarrierCoverage'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'CarrierCoverage'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  CarrierCoverage;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  CoverageArea;
+  
+  @EndUserText.label: 'CoverageAreaDesc'
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'CoverageAreaDesc'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'CoverageAreaDesc'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  CoverageAreaDesc;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  CoverageLine;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  CoverageMajor;
+  
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  CoverageMinor;
+  
+  @UI.identification: [ {
+    position: 160 
+  } ]
+  @UI.lineItem: [ {
+    position: 160 
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  Createdbyid;
+  
+  @UI.identification: [ {
+    position: 170 
+  } ]
+  @UI.lineItem: [ {
+    position: 170 
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  CurrencyCode;
+  
+  @EndUserText.label: 'DateCancelled'
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'DateCancelled'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'DateCancelled'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  DateCancelled;
+  
+  @EndUserText.label: 'DateExcessCarrierNotified'
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'DateExcessCarrierNotified'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'DateExcessCarrierNotified'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  DateExcessCarrierNotified;
+  
+  @EndUserText.label: 'DatePolicyCanceled'
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'DatePolicyCanceled'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'DatePolicyCanceled'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  DatePolicyCanceled;
+  
+  @UI.identification: [ {
+    position: 210 
+  } ]
+  @UI.lineItem: [ {
+    position: 210 
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  ExcessPolicy;
+  
+  @EndUserText.label: 'Exclusions'
+  @UI.identification: [ {
+    position: 220 , 
+    label: 'Exclusions'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 , 
+    label: 'Exclusions'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  Exclusions;
+  
+  @EndUserText.label: 'DatePolicyExpiration'
+  @UI.identification: [ {
+    position: 230 , 
+    label: 'DatePolicyExpiration'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 , 
+    label: 'DatePolicyExpiration'
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  DatePolicyExpiration;
+  
+  @UI.identification: [ {
+    position: 240 
+  } ]
+  @UI.lineItem: [ {
+    position: 240 
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  Form;
+  
+  @UI.identification: [ {
+    position: 250 
+  } ]
+  @UI.lineItem: [ {
+    position: 250 
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  FrontingInsurer;
+  
+  @UI.identification: [ {
+    position: 260 
+  } ]
+  @UI.lineItem: [ {
+    position: 260 
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  GrossGrm;
+  
+  @UI.identification: [ {
+    position: 270 
+  } ]
+  @UI.lineItem: [ {
+    position: 270 
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  GrossPremiumPaid;
+  
+  @UI.identification: [ {
+    position: 280 
+  } ]
+  @UI.lineItem: [ {
+    position: 280 
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  GrossReinsurancePremiumPaid;
+  
+  @UI.identification: [ {
+    position: 290 
+  } ]
+  @UI.lineItem: [ {
+    position: 290 
+  } ]
+  @UI.selectionField: [ {
+    position: 290 
+  } ]
+  GrossReinsurancePremiumRepo;
+  
+  @UI.identification: [ {
+    position: 300 
+  } ]
+  @UI.lineItem: [ {
+    position: 300 
+  } ]
+  @UI.selectionField: [ {
+    position: 300 
+  } ]
+  GrossWrittenPremiumReceived;
+  
+  @UI.identification: [ {
+    position: 310 
+  } ]
+  @UI.lineItem: [ {
+    position: 310 
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  GrossWrittenPremiumReported;
+  
+  @UI.identification: [ {
+    position: 320 
+  } ]
+  @UI.lineItem: [ {
+    position: 320 
+  } ]
+  @UI.selectionField: [ {
+    position: 320 
+  } ]
+  HierarchyLevel;
+  
+  @EndUserText.label: 'DatePolicyEffective'
+  @UI.identification: [ {
+    position: 330 , 
+    label: 'DatePolicyEffective'
+  } ]
+  @UI.lineItem: [ {
+    position: 330 , 
+    label: 'DatePolicyEffective'
+  } ]
+  @UI.selectionField: [ {
+    position: 330 
+  } ]
+  DatePolicyEffective;
+  
+  @UI.identification: [ {
+    position: 340 
+  } ]
+  @UI.lineItem: [ {
+    position: 340 
+  } ]
+  @UI.selectionField: [ {
+    position: 340 
+  } ]
+  UserId;
+  
+  @UI.identification: [ {
+    position: 350 
+  } ]
+  @UI.lineItem: [ {
+    position: 350 
+  } ]
+  @UI.selectionField: [ {
+    position: 350 
+  } ]
+  Insured;
+  
+  @UI.identification: [ {
+    position: 360 
+  } ]
+  @UI.lineItem: [ {
+    position: 360 
+  } ]
+  @UI.selectionField: [ {
+    position: 360 
+  } ]
+  Insurer;
+  
+  @EndUserText.label: 'InsurerContactDetails'
+  @UI.identification: [ {
+    position: 370 , 
+    label: 'InsurerContactDetails'
+  } ]
+  @UI.lineItem: [ {
+    position: 370 , 
+    label: 'InsurerContactDetails'
+  } ]
+  @UI.selectionField: [ {
+    position: 370 
+  } ]
+  InsurerContactDetails;
+  
+  @UI.identification: [ {
+    position: 380 
+  } ]
+  @UI.lineItem: [ {
+    position: 380 
+  } ]
+  @UI.selectionField: [ {
+    position: 380 
+  } ]
+  Lastmodifiedbyid;
+  
+  @EndUserText.label: 'LayerNumber'
+  @UI.identification: [ {
+    position: 390 , 
+    label: 'LayerNumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 390 , 
+    label: 'LayerNumber'
+  } ]
+  @UI.selectionField: [ {
+    position: 390 
+  } ]
+  LayerNumber;
+  
+  @EndUserText.label: 'LocalPolicyAutonum'
+  @UI.identification: [ {
+    position: 400 , 
+    label: 'LocalPolicyAutonum'
+  } ]
+  @UI.lineItem: [ {
+    position: 400 , 
+    label: 'LocalPolicyAutonum'
+  } ]
+  @UI.selectionField: [ {
+    position: 400 
+  } ]
+  LocalPolicyAutonum;
+  
+  @UI.identification: [ {
+    position: 410 
+  } ]
+  @UI.lineItem: [ {
+    position: 410 
+  } ]
+  @UI.selectionField: [ {
+    position: 410 
+  } ]
+  MiasGrossPremium;
+  
+  @UI.identification: [ {
+    position: 420 
+  } ]
+  @UI.lineItem: [ {
+    position: 420 
+  } ]
+  @UI.selectionField: [ {
+    position: 420 
+  } ]
+  MiasNetPremium;
+  
+  @UI.identification: [ {
+    position: 430 
+  } ]
+  @UI.lineItem: [ {
+    position: 430 
+  } ]
+  @UI.selectionField: [ {
+    position: 430 
+  } ]
+  MiasProgram;
+  
+  @UI.identification: [ {
+    position: 440 
+  } ]
+  @UI.lineItem: [ {
+    position: 440 
+  } ]
+  @UI.selectionField: [ {
+    position: 440 
+  } ]
+  MiasProgramDescription;
+  
+  @EndUserText.label: 'MiasRIYN'
+  @UI.identification: [ {
+    position: 450 , 
+    label: 'MiasRIYN'
+  } ]
+  @UI.lineItem: [ {
+    position: 450 , 
+    label: 'MiasRIYN'
+  } ]
+  @UI.selectionField: [ {
+    position: 450 
+  } ]
+  MiasRIYN;
+  
+  @EndUserText.label: 'RIPercent1'
+  @UI.identification: [ {
+    position: 460 , 
+    label: 'RIPercent1'
+  } ]
+  @UI.lineItem: [ {
+    position: 460 , 
+    label: 'RIPercent1'
+  } ]
+  @UI.selectionField: [ {
+    position: 460 
+  } ]
+  RIPercent1;
+  
+  @EndUserText.label: 'NamedInsured'
+  @UI.identification: [ {
+    position: 470 , 
+    label: 'NamedInsured'
+  } ]
+  @UI.lineItem: [ {
+    position: 470 , 
+    label: 'NamedInsured'
+  } ]
+  @UI.selectionField: [ {
+    position: 470 
+  } ]
+  NamedInsured;
+  
+  @EndUserText.label: 'NamedInsuredAddress'
+  @UI.identification: [ {
+    position: 480 , 
+    label: 'NamedInsuredAddress'
+  } ]
+  @UI.lineItem: [ {
+    position: 480 , 
+    label: 'NamedInsuredAddress'
+  } ]
+  @UI.selectionField: [ {
+    position: 480 
+  } ]
+  NamedInsuredAddress;
+  
+//  @UI.identification: [ {
+//    position: 490 
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 490 
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 490 
+//  } ]
+//  netgrm;
+  
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 500 , 
+    label: 'Notes'
+  } ]
+  @UI.lineItem: [ {
+    position: 500 , 
+    label: 'Notes'
+  } ]
+  @UI.selectionField: [ {
+    position: 500 
+  } ]
+  Notes;
+  
+  @EndUserText.label: 'NotifyExcessCarrier'
+  @UI.identification: [ {
+    position: 510 , 
+    label: 'NotifyExcessCarrier'
+  } ]
+  @UI.lineItem: [ {
+    position: 510 , 
+    label: 'NotifyExcessCarrier'
+  } ]
+  @UI.selectionField: [ {
+    position: 510 
+  } ]
+  NotifyExcessCarrier;
+  
+  @UI.identification: [ {
+    position: 520 
+  } ]
+  @UI.lineItem: [ {
+    position: 520 
+  } ]
+  @UI.selectionField: [ {
+    position: 520 
+  } ]
+  Ownerid;
+  
+  @UI.identification: [ {
+    position: 530 
+  } ]
+  @UI.lineItem: [ {
+    position: 530 
+  } ]
+  @UI.selectionField: [ {
+    position: 530 
+  } ]
+  PercentReinsured;
+  
+  @EndUserText.label: 'MiasPercentage'
+  @UI.identification: [ {
+    position: 540 , 
+    label: 'MiasPercentage'
+  } ]
+  @UI.lineItem: [ {
+    position: 540 , 
+    label: 'MiasPercentage'
+  } ]
+  @UI.selectionField: [ {
+    position: 540 
+  } ]
+  MiasPercentage;
+  
+  @EndUserText.label: 'PolicyAggregateLimit'
+  @UI.identification: [ {
+    position: 550 , 
+    label: 'PolicyAggregateLimit'
+  } ]
+  @UI.lineItem: [ {
+    position: 550 , 
+    label: 'PolicyAggregateLimit'
+  } ]
+  @UI.selectionField: [ {
+    position: 550 
+  } ]
+  PolicyAggregateLimit;
+  
+  @UI.identification: [ {
+    position: 560 
+  } ]
+  @UI.lineItem: [ {
+    position: 560 
+  } ]
+  @UI.selectionField: [ {
+    position: 560 
+  } ]
+  PolicyBasis;
+  
+  @UI.identification: [ {
+    position: 570 
+  } ]
+  @UI.lineItem: [ {
+    position: 570 
+  } ]
+  @UI.selectionField: [ {
+    position: 570 
+  } ]
+  PolicyDescription;
+  
+  @UI.identification: [ {
+    position: 580 
+  } ]
+  @UI.lineItem: [ {
+    position: 580 
+  } ]
+  @UI.selectionField: [ {
+    position: 580 
+  } ]
+  PolicyDocument;
+  
+  @EndUserText.label: 'PolicyNumber'
+  @UI.identification: [ {
+    position: 590 , 
+    label: 'PolicyNumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 590 , 
+    label: 'PolicyNumber'
+  } ]
+  @UI.selectionField: [ {
+    position: 590 
+  } ]
+  PolicyNumber;
+  
+  @EndUserText.label: 'PolicyOccurrenceLimit'
+  @UI.identification: [ {
+    position: 600 , 
+    label: 'PolicyOccurrenceLimit'
+  } ]
+  @UI.lineItem: [ {
+    position: 600 , 
+    label: 'PolicyOccurrenceLimit'
+  } ]
+  @UI.selectionField: [ {
+    position: 600 
+  } ]
+  PolicyOccurrenceLimit;
+  
+  @UI.identification: [ {
+    position: 610 
+  } ]
+  @UI.lineItem: [ {
+    position: 610 
+  } ]
+  @UI.selectionField: [ {
+    position: 610 
+  } ]
+  PolicyStatus;
+  
+/*  @UI.identification: [ {
+    position: 620 
+  } ]
+  @UI.lineItem: [ {
+    position: 620 
+  } ]
+  @UI.selectionField: [ {
+    position: 620 
+//  } ]
+  PolicyType; */
+  
+  @UI.identification: [ {
+    position: 630 
+  } ]
+  @UI.lineItem: [ {
+    position: 630 
+  } ]
+  @UI.selectionField: [ {
+    position: 630 
+  } ]
+  PolicyYear;
+  
+  @UI.identification: [ {
+    position: 640 
+  } ]
+  @UI.lineItem: [ {
+    position: 640 
+  } ]
+  @UI.selectionField: [ {
+    position: 640 
+  } ]
+  PredecessorPolicy;
+  
+  @EndUserText.label: 'PrimaryPolicy'
+  @UI.identification: [ {
+    position: 650 , 
+    label: 'PrimaryPolicy'
+  } ]
+  @UI.lineItem: [ {
+    position: 650 , 
+    label: 'PrimaryPolicy'
+  } ]
+  @UI.selectionField: [ {
+    position: 650 
+  } ]
+  PrimaryPolicy;
+  
+  @EndUserText.label: 'ProRataShare'
+  @UI.identification: [ {
+    position: 660 , 
+    label: 'ProRataShare'
+  } ]
+  @UI.lineItem: [ {
+    position: 660 , 
+    label: 'ProRataShare'
+  } ]
+  @UI.selectionField: [ {
+    position: 660 
+  } ]
+  ProRataShare;
+  
+  @UI.identification: [ {
+    position: 670 
+  } ]
+  @UI.lineItem: [ {
+    position: 670 
+  } ]
+  @UI.selectionField: [ {
+    position: 670 
+  } ]
+  ProRatePeriod;
+  
+  @UI.identification: [ {
+    position: 680 
+  } ]
+  @UI.lineItem: [ {
+    position: 680 
+  } ]
+  @UI.selectionField: [ {
+    position: 680 
+  } ]
+  Producer;
+  
+  @UI.identification: [ {
+    position: 690 
+  } ]
+  @UI.lineItem: [ {
+    position: 690 
+  } ]
+  @UI.selectionField: [ {
+    position: 690 
+  } ]
+  ProgramId;
+  
+  @UI.identification: [ {
+    position: 700 
+  } ]
+  @UI.lineItem: [ {
+    position: 700 
+  } ]
+  @UI.selectionField: [ {
+    position: 700 
+  } ]
+  ProgramYear;
+  
+  @EndUserText.label: 'ProgramComments'
+  @UI.identification: [ {
+    position: 710 , 
+    label: 'ProgramComments'
+  } ]
+  @UI.lineItem: [ {
+    position: 710 , 
+    label: 'ProgramComments'
+  } ]
+  @UI.selectionField: [ {
+    position: 710 
+  } ]
+  ProgramComments;
+  
+  @UI.identification: [ {
+    position: 720 
+  } ]
+  @UI.lineItem: [ {
+    position: 720 
+  } ]
+  @UI.selectionField: [ {
+    position: 720 
+  } ]
+  Rating;
+  
+  @EndUserText.label: 'Recordtypeid'
+  @UI.identification: [ {
+    position: 730 , 
+    label: 'Recordtypeid'
+  } ]
+  @UI.lineItem: [ {
+    position: 730 , 
+    label: 'Recordtypeid'
+  } ]
+  @UI.selectionField: [ {
+    position: 730 
+  } ]
+  Recordtypeid;
+  
+  @UI.identification: [ {
+    position: 740 
+  } ]
+  @UI.lineItem: [ {
+    position: 740 
+  } ]
+  @UI.selectionField: [ {
+    position: 740 
+  } ]
+  RenewalPolicy;
+  
+  @EndUserText.label: 'RetentionAmount'
+  @UI.identification: [ {
+    position: 750 , 
+    label: 'RetentionAmount'
+  } ]
+  @UI.lineItem: [ {
+    position: 750 , 
+    label: 'RetentionAmount'
+  } ]
+  @UI.selectionField: [ {
+    position: 750 
+  } ]
+  RetentionAmount;
+  
+  @UI.identification: [ {
+    position: 760 
+  } ]
+  @UI.lineItem: [ {
+    position: 760 
+  } ]
+  @UI.selectionField: [ {
+    position: 760 
+  } ]
+  RetentionType;
+  
+  @UI.identification: [ {
+    position: 770 
+  } ]
+  @UI.lineItem: [ {
+    position: 770 
+  } ]
+  @UI.selectionField: [ {
+    position: 770 
+  } ]
+  SubsidiaryOrBusinessUnit;
+  
+  @UI.identification: [ {
+    position: 780 
+  } ]
+  @UI.lineItem: [ {
+    position: 780 
+  } ]
+  @UI.selectionField: [ {
+    position: 780 
+  } ]
+  SuccessorPolicy;
+  
+  @EndUserText.label: 'RkProcessStatus'
+  @UI.identification: [ {
+    position: 790 , 
+    label: 'RkProcessStatus'
+  } ]
+  @UI.lineItem: [ {
+    position: 790 , 
+    label: 'RkProcessStatus'
+  } ]
+  @UI.selectionField: [ {
+    position: 790 
+  } ]
+  RkProcessStatus;
+  
+  @UI.identification: [ {
+    position: 800 
+  } ]
+  @UI.lineItem: [ {
+    position: 800 
+  } ]
+  @UI.selectionField: [ {
+    position: 800 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 810 
+  } ]
+  @UI.lineItem: [ {
+    position: 810 
+  } ]
+  @UI.selectionField: [ {
+    position: 810 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 820 
+  } ]
+  @UI.lineItem: [ {
+    position: 820 
+  } ]
+  @UI.selectionField: [ {
+    position: 820 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 830 
+  } ]
+  @UI.lineItem: [ {
+    position: 830 
+  } ]
+  @UI.selectionField: [ {
+    position: 830 
+  } ]
+  Lastchangedat;
+}

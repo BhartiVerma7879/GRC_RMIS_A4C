@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Aseet Application'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TRMIS_ASSET000'
+  }
+}
+define service ZUI_TRMIS_ASSET000_O4 {
+  expose ZC_TRMIS_ASSET000     as Asset;
+  expose ZC_TRMIS_ASSET_VAL000 as AssetVal;
+}

@@ -1,0 +1,7 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TGRC_ASSET003'
+}
+define service ZUI_ASSET000_O4 {
+  expose ZC_TGRC_ASSET003     as Asset;
+  expose ZC_TGRC_ASSET_VAL003 as Assetvalue;
+}

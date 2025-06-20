@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service Definition for Policy'
+define service ZUI_GRC_POLICY
+  provider contracts odata_v4_ui {
+  expose ZC_GRC_POLICY      as Policy;
+  expose ZC_GRC_POLICY_ENDO as Policyendo;
+  expose ZC_GRC_POLICY_SEC  as Policysec;
+  expose ZC_GRC_POLICY_TRAN as Policytran;
+}

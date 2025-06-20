@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TRMIS_LOCATION'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TRMIS_LOCATION'
+  }
+}
+define service ZUI_TRMIS_LOCATION_O4 provider contracts odata_v4_ui {
+  expose ZC_TRMIS_LOCATION;
+}

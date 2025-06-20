@@ -1,0 +1,158 @@
+@Metadata.layer: #CUSTOMER
+//@UI.headerInfo.title.type: #STANDARD
+//@UI.headerInfo.title.value: 'OccurenceNo'
+//@UI.headerInfo.description.type: #STANDARD
+//@UI.headerInfo.description.value: 'OccurenceNo'
+@UI.headerInfo : { 
+      typeName: 'Occurence',
+      typeNamePlural: 'Occurences',
+      title : { value: 'OccurenceNo' },
+      description: {  value: 'OccurenceNo' }
+      
+      }
+annotate view ZC_RMIS_OCCURNCE with
+{
+  @EndUserText.label: 'OccurenceNo'
+  @UI.facet: [ { 
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 10,
+       id: 'super',
+       label: 'Details'
+        }, { 
+       purpose : #STANDARD,
+       type: #COLLECTION,
+       position: 20,
+       id: 'Fin',
+       label: 'Financials'
+        },
+        {  
+        purpose: #STANDARD,
+       type: #COLLECTION,
+       position: 30,
+       id: 'Claims',
+       label: 'Claims'
+        },
+      { 
+       purpose: #STANDARD,
+       type: #IDENTIFICATION_REFERENCE,
+       label: 'Information',
+       position: 10,
+       parentId: 'super'
+      },
+      { 
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Additional Information',
+      position: 30,
+      parentId: 'super',
+      targetQualifier: 'user' } ]  
+
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'OccurenceNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'OccurenceNo'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  OccurenceNo;
+  
+  @EndUserText.label: 'Name'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Name'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Name;
+   @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Description;
+  
+  @EndUserText.label: 'CatastropheCode'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'CatastropheCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'CatastropheCode'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  CatastropheCode;
+  @EndUserText.label: 'Occurence Type'
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  OccurrenceType;
+  
+  @EndUserText.label: 'Occurence Date'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Occurence Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Occurence Date'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  DateOfLoss;
+  @EndUserText.label: 'Country'
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Country;
+    @EndUserText.label: 'Owner'
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'Owner'
+  } ]
+  @UI.lineItem: [ {
+    position: 80,
+    label: 'Owner'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Owner;
+  
+  @UI.fieldGroup: [{ qualifier: 'user', label: 'Created By', position:10 }]
+  Createdby;
+  
+ @UI.fieldGroup: [{ qualifier: 'user', label: 'Last Changed By', position:20 }]
+  Lastchangedby;
+
+}

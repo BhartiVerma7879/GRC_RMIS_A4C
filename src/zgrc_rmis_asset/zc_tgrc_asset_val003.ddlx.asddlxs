@@ -1,0 +1,348 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'AssetValueUuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'AssetValueUuid'
+annotate view ZC_TGRC_ASSET_VAL003 with
+{
+  @EndUserText.label: 'AssetValueUuid'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'AssetValueUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'AssetValueUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  AssetValueUuid;
+  
+  @EndUserText.label: 'AssetUuid'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'AssetUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'AssetUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  AssetUuid;
+  
+  @EndUserText.label: 'AssetValId'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'AssetValId'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'AssetValId'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  AssetValId;
+  
+  @EndUserText.label: 'AssetValueExternal'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'AssetValueExternal'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'AssetValueExternal'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  AssetValueExternal;
+  
+  @EndUserText.label: 'AmountOfInterest'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'AmountOfInterest'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'AmountOfInterest'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  AmountOfInterest;
+  
+  @EndUserText.label: 'AmountOfInterestChangeAmt'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'AmountOfInterestChangeAmt'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'AmountOfInterestChangeAmt'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  AmountOfInterestChangeAmt;
+  
+  @EndUserText.label: 'ApmmInsuredValue'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'ApmmInsuredValue'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'ApmmInsuredValue'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  ApmmInsuredValue;
+  
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  AssetCategory;
+  
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  AssetStatus;
+  
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  AssetValueFormula;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  AssetValueOnl;
+  
+  @EndUserText.label: 'AssetValue100Percent'
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'AssetValue100Percent'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'AssetValue100Percent'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  AssetValue100Percent;
+  
+  @EndUserText.label: 'AssetVal100PercntChngAmt'
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'AssetVal100PercntChngAmt'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'AssetVal100PercntChngAmt'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  AssetVal100PercntChngAmt;
+  
+  @EndUserText.label: 'AssetValueChangeAmount'
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'AssetValueChangeAmount'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'AssetValueChangeAmount'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  AssetValueChangeAmount;
+  
+  @EndUserText.label: 'AssetValueForInterest'
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'AssetValueForInterest'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'AssetValueForInterest'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  AssetValueForInterest;
+  
+  @EndUserText.label: 'AssetValForInterestchngAmt'
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'AssetValForInterestchngAmt'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'AssetValForInterestchngAmt'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  AssetValForInterestchngAmt;
+  
+  @EndUserText.label: 'AssetName'
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'AssetName'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'AssetName'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  AssetName;
+  
+  @UI.identification: [ {
+    position: 180 
+  } ]
+  @UI.lineItem: [ {
+    position: 180 
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  AssetValueStatus;
+  
+  @EndUserText.label: 'BusinessInterruption'
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'BusinessInterruption'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'BusinessInterruption'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  BusinessInterruption;
+  
+  @EndUserText.label: 'BusinessInterruptionChngAmt'
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'BusinessInterruptionChngAmt'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'BusinessInterruptionChngAmt'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  BusinessInterruptionChngAmt;
+  
+  @UI.identification: [ {
+    position: 210 
+  } ]
+  @UI.lineItem: [ {
+    position: 210 
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  BusinessUnit;
+  
+  @EndUserText.label: 'CargoValue'
+  @UI.identification: [ {
+    position: 220 , 
+    label: 'CargoValue'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 , 
+    label: 'CargoValue'
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  CargoValue;
+  
+  @UI.identification: [ {
+    position: 230 
+  } ]
+  @UI.lineItem: [ {
+    position: 230 
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 240 
+  } ]
+  @UI.lineItem: [ {
+    position: 240 
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 250 
+  } ]
+  @UI.lineItem: [ {
+    position: 250 
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 260 
+  } ]
+  @UI.lineItem: [ {
+    position: 260 
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  Lastchangedat;
+}

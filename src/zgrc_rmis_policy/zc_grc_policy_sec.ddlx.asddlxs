@@ -1,0 +1,428 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Policy'
+@UI.headerInfo.typeNamePlural: 'Projection CDS View for ZR_GRC_POLICY'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'PolicysecUuid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'PolicysecUuid'
+annotate view ZC_GRC_POLICY_SEC
+    with 
+{
+  @EndUserText.label: 'PolicysecUuid'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'PolicysecUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'PolicysecUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  @UI.hidden: true
+  PolicysecUuid;
+  
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  },
+  { type: #FOR_ACTION, label: 'Clone',
+    dataAction: 'copy' } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  PolicyName;
+  
+  @EndUserText.label: 'PolicyNumber'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'PolicyNumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'PolicyNumber'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  PolicyNumber;
+  
+  @EndUserText.label: 'Policyuuid'
+  @UI.identification: [ {
+    position: 35 , 
+    label: 'PolicyUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 35 , 
+    label: 'PolicyUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 35 
+  } ]
+  PolicyUuid;
+  
+  @EndUserText.label: 'PolicySectionName'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'PolicySectionName'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'PolicySectionName'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  PolicySectionName;
+  
+  @EndUserText.label: 'SectionName'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'SectionName'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'SectionName'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  SectionName;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  AddLDeductibleLimitsInfo;
+  
+  @EndUserText.label: 'SectionAttachmentPoint'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'SectionAttachmentPoint'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'SectionAttachmentPoint'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  SectionAttachmentPoint;
+  
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Createdbyid;
+  
+  @EndUserText.label: 'CurrencyCode'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'CurrencyCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'CurrencyCode'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  CurrencyCode;
+  
+  @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Description'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  Description;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  ExcessLayerPolicySection;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  ExcessPolicySection;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  HierarchyLevel;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  Lastmodifiedbyid;
+  
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'Notes'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'Notes'
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  Notes;
+  
+  @EndUserText.label: 'PolicySectionNumber'
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'PolicySectionNumber'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'PolicySectionNumber'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  PolicySectionNumber;
+  
+  @UI.identification: [ {
+    position: 170 
+  } ]
+  @UI.lineItem: [ {
+    position: 170 
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  PredecessorPolicySection;
+  
+  @UI.identification: [ {
+    position: 180 
+  } ]
+  @UI.lineItem: [ {
+    position: 180 
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  RenewalPolicySection;
+  
+  @EndUserText.label: 'RetentionAmount'
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'RetentionAmount'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'RetentionAmount'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  RetentionAmount;
+  
+  @UI.identification: [ {
+    position: 200 
+  } ]
+  @UI.lineItem: [ {
+    position: 200 
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  RetentionType;
+  
+  @EndUserText.label: 'AggregateLimit1'
+  @UI.identification: [ {
+    position: 210 , 
+    label: 'AggregateLimit1'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 , 
+    label: 'AggregateLimit1'
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  AggregateLimit1;
+  
+  @UI.identification: [ {
+    position: 220 
+  } ]
+  @UI.lineItem: [ {
+    position: 220 
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  SectionCoverage;
+  
+  @UI.identification: [ {
+    position: 230 
+  } ]
+  @UI.lineItem: [ {
+    position: 230 
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  SectionCoverageMajor;
+  
+  @UI.identification: [ {
+    position: 240 
+  } ]
+  @UI.lineItem: [ {
+    position: 240 
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  SectionCoverageMinor;
+  
+  @EndUserText.label: 'DateSectionExpiration'
+  @UI.identification: [ {
+    position: 250 , 
+    label: 'DateSectionExpiration'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 , 
+    label: 'DateSectionExpiration'
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  DateSectionExpiration;
+  
+  @EndUserText.label: 'DateSectionEffective'
+  @UI.identification: [ {
+    position: 260 , 
+    label: 'DateSectionEffective'
+  } ]
+  @UI.lineItem: [ {
+    position: 260 , 
+    label: 'DateSectionEffective'
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  DateSectionEffective;
+  
+  @EndUserText.label: 'OccurrenceLimit1'
+  @UI.identification: [ {
+    position: 270 , 
+    label: 'OccurrenceLimit1'
+  } ]
+  @UI.lineItem: [ {
+    position: 270 , 
+    label: 'OccurrenceLimit1'
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  OccurrenceLimit1;
+  
+  @UI.identification: [ {
+    position: 280 
+  } ]
+  @UI.lineItem: [ {
+    position: 280 
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  LayerType;
+  
+  @UI.identification: [ {
+    position: 290 
+  } ]
+  @UI.lineItem: [ {
+    position: 290 
+  } ]
+  @UI.selectionField: [ {
+    position: 290 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 300 
+  } ]
+  @UI.lineItem: [ {
+    position: 300 
+  } ]
+  @UI.selectionField: [ {
+    position: 300 
+  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 310 
+  } ]
+  @UI.lineItem: [ {
+    position: 310 
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 320 
+  } ]
+  @UI.lineItem: [ {
+    position: 320 
+  } ]
+  @UI.selectionField: [ {
+    position: 320 
+  } ]
+  Lastchangedat;
+}

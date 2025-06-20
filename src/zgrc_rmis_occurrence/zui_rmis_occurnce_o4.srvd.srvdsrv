@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_RMIS_OCCURNCE'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_RMIS_OCCURNCE'
+  }
+}
+define service ZUI_RMIS_OCCURNCE_O4 provider contracts odata_v4_ui {
+  expose ZC_RMIS_OCCURNCE;
+}

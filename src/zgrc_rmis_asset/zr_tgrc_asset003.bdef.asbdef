@@ -1,0 +1,109 @@
+managed implementation in class ZBP_R_TGRC_ASSET003 unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TGRC_ASSET003 alias Root
+persistent table ZTGRC_ASSET
+draft table ZTGRC_ASSET003_D
+etag master Lastchangedat
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( readonly )
+   AssetUuid,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+  field ( numbering : managed )
+   AssetUuid;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+association _Child { create; with draft; }
+  mapping for ZTGRC_ASSET
+  {
+    AssetUuid = asset_uuid;
+    AssetId = asset_id;
+    AssetExternal = asset_external;
+    AccountingCode = accounting_code;
+    Afe = afe;
+    AgreedValueLookup = agreed_value_lookup;
+    AreaSqKm = area_sq_km;
+    AssetCategory = asset_category;
+    AssetDescription = asset_description;
+    AssetMakeOrModel = asset_make_or_model;
+    AssetName = asset_name;
+    AssetPolicyHistory = asset_policy_history;
+    AssetStatus = asset_status;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}
+
+define behavior for ZR_TGRC_ASSET_VAL003 alias Child
+persistent table ZTGRC_ASSET_VAL
+draft table ZTGRC_ASST003_D
+etag master Lastchangedat
+lock dependent by _Root
+authorization dependent by _Root
+
+{
+  field ( readonly )
+   AssetUuid,
+   AssetValueUuid,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat;
+
+
+  field ( numbering : managed )
+   AssetValueUuid;
+
+association _Root { with draft; }
+
+  update;
+  delete;
+
+  mapping for ZTGRC_ASSET_VAL
+  {
+    AssetValueUuid = asset_value_uuid;
+    AssetUuid = asset_uuid;
+    AssetValId = asset_val_id;
+    AssetValueExternal = asset_value_external;
+    AmountOfInterest = amount_of_interest;
+    AmountOfInterestChangeAmt = amount_of_interest_change_amt;
+    ApmmInsuredValue = apmm_insured_value;
+    AssetCategory = asset_category;
+    AssetStatus = asset_status;
+    AssetValueFormula = asset_value_formula;
+    AssetValueOnl = asset_value_onl;
+    AssetValue100Percent = asset_value_100_percent;
+    AssetVal100PercntChngAmt = asset_val_100_percnt_chng_amt;
+    AssetValueChangeAmount = asset_value_change_amount;
+    AssetValueForInterest = asset_value_for_interest;
+    AssetValForInterestchngAmt = asset_val_for_interestchng_amt;
+    AssetName = asset_name;
+    AssetValueStatus = asset_value_status;
+    BusinessInterruption = business_interruption;
+    BusinessInterruptionChngAmt = business_interruption_chng_amt;
+    BusinessUnit = business_unit;
+    CargoValue = cargo_value;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+  }
+}
